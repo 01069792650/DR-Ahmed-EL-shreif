@@ -1,0 +1,375 @@
+/* إعدادات عامة */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-color: #c67ccb;
+}
+
+/* إعدادات لعنصر الشهر والأسبوع */
+.month {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 15px;
+    background-color: #fbf4fb;
+    border-radius: 8px;
+    
+}
+
+.week {
+    margin-left: 20px;
+    padding: 5px;
+    border-left: 2px solid #007bff;
+    font-weight: bold;
+    color: #f8fafd;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* إعدادات قسم الفصل */
+.term {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 100%;
+    margin: 20px auto;
+    justify-content: center;
+    
+    
+    }
+   
+
+
+/* إعدادات قسم الرأس الرئيسي */
+.main-header {
+    position: relative;
+    height: 100vh;
+    background-image: url('IMAGES/ليالــــــــى\ الإمتحان.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    animation: zoomIn 10s infinite;
+}
+
+.main-header h1 {
+    font-size: 10em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ab10ff;
+}
+
+.main-header h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.main-header p {
+    font-size: 1.5em;
+}
+
+/* حركة التكبير */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* إعدادات لعنصر الحاوية */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 100px;
+   
+}
+
+.class-box {
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* عرض أصغر للصناديق في الهواتف */
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+    height: 350px;
+   
+}
+
+.class-box:hover {
+    transform: scale(1.30);
+}
+
+.class-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.month hr {
+    background-color: #261460; /* لون الخط */
+    border: none; /* إزالة الحدود الافتراضية */
+    height: 2px; /* سمك الخط */
+    margin: 20px 0; /* مساحة حول الخط */
+}
+.row {
+    display: flex;
+    width: 100%;
+    height: auto; /* تقليص الارتفاع */
+    gap: 50px; /* المسافة بين المربعات */
+    justify-content: center; /* محاذاة المربعات في الوسط */
+   
+}
+
+/* إعدادات الفوتر */
+footer {
+    background-color: #063760;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-top: 50px;
+}
+
+.amira-footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.amira-footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.amira-footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.amira-footer-section p {
+    font-size: 50px;
+    margin-bottom: 10px;
+     font-family: 'Cairo', sans-serif;
+    
+}
+.amira-footer-bottom p{
+    font-size: 25px;
+    margin-bottom: 10px;
+     font-family: 'Cairo', sans-serif;
+    
+    
+}
+.amira-footer-bottom hr {
+    background-color: #b6eff4; /* لون الخط */
+    border: none; /* إزالة الحدود الافتراضية */
+    height: .5px; /* سمك الخط */
+    margin: 10px 0; /* مساحة حول الخط */
+    margin-top: 20px;
+}
+.amira-footer-bottom strong{
+  color: #d709e6;
+    border: none; /* إزالة الحدود الافتراضية */
+    height: 2px; /* سمك الخط */
+   
+}
+.amira-footer-bottom h1{
+    color: rgb(255, 253, 251);
+      border: none; /* إزالة الحدود الافتراضية */
+      height: 40px; /* سمك الخط */
+     
+  }
+
+
+.amira-footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.amira-footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.amira-footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.amira-footer-section .amira-socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.amira-social {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.amira-social:hover {
+    background-color: #f0f0f0;
+    color: #396AFF;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+/* تصميم للشاشات الصغيرة */
+@media (max-width: 768px) {
+    /* الحاوية تتحول إلى عمود */
+    .container {
+        flex-direction: column;
+        gap: 80px;
+        margin-top: 70px;
+       
+    }
+
+    /* تكبير النصوص في القسم الرئيسي ليكون أكثر وضوحًا */
+    .main-header h1 {
+        font-size: 2.5em;
+    }
+
+    .main-header h2 {
+        font-size: 1.8em;
+    }
+
+    /* تخصيص عرض الصندوق بشكل مناسب للهواتف */
+    .class-box {
+        width: 100%;
+        max-width: 100%; /* عرض الصندوق بكامل الشاشة */
+        height: auto;
+        justify-content: center;
+        
+       
+    }
+   
+
+    .term {
+        width: 100%;
+        max-width: 100%; /* عرض العنصر بكامل الشاشة */
+        padding: 10px;
+       
+    }
+
+    .amira-footer-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .amira-footer-section p,
+    .footer-content p {
+        font-size: 50px;
+        font-family: 'Cairo', sans-serif;
+    }
+    .amira-footer-bottom h1{
+        font-size: 25px;
+        font-family: 'Cairo', sans-serif;
+        width: 100%;
+    
+    }
+    .amira-footer-bottom p{
+        font-size: 10px;
+    }
+    .amira-footer-bottom strong{
+        font-size: 15px;
+    }
+}
+
+
+
+/* تصميم للشاشات الأكبر */
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+      
+        
+    }
+
+    .class-box {
+        width: 48%; /* توزيع الصناديق بشكل متساوي */
+
+       
+    }
+
+    .term {
+        width: 100%; /* توزيع العناصر بشكل متساوي */
+      
+    }
+    .month{
+        width: 100%;
+}
+  
+    .amira-footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
