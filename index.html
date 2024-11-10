@@ -2,28 +2,94 @@
 <html lang="ar">
 
 <head>
+    <div class="" onclick="openContent('content4')">
+    <header class="header">
+   
+        <!-- أزرار المستخدم -->
+        <div class="user-buttons">
+            <button class="register-btn">
+                <span>أنشئ حسابك</span>
+                <i class="fa fa-user-plus"></i> <!-- أيقونة إنشاء حساب -->
+            </button>
+            <button class="login-btn">
+                <span>سجل دخولك</span>
+                <i class="fa fa-sign-in-alt"></i> <!-- أيقونة تسجيل الدخول -->
+            </button>
+        </div>
+    </div>
+
+
+        <div id="content4" class="term" style="display: none;">
+            <div class="container4">
+                <form action="#">
+                    <h2>تسجيل الدخول</h2>
+        
+                    <!-- حقل البريد الإلكتروني -->
+                    <div class="input-field">
+                        <label>البريد الإلكتروني</label>
+                        <input type="text" required>
+                    </div>
+        
+                    <!-- حقل كلمة المرور -->
+                    <div class="input-field">
+                        <label>كلمة المرور</label>
+                        <input type="password" required>
+                    </div>
+        
+                    <!-- خيار تذكر تسجيل الدخول -->
+                    <div class="forget">
+                        <label>
+                            <input type="checkbox" id="save-login">
+                            حفظ معلومات التسجيل
+                        </label>
+                    </div>
+        
+                    <!-- زر الدخول -->
+                    <button type="submit">دخول</button>
+        
+                    <!-- رابط لإنشاء حساب جديد -->
+                    <p class="create-account">ليس لديك حساب؟ <a href="#">إنشاء حساب جديد</a></p>
+                </form>
+            </div>
+            </div>
+    </head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr/Ahmed EL-shreif  م/أحمد الشريف</title>
+    <script src="script.js"></script> <!-- ربط بملف JavaScript -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+   
+</head>
+<body>
+    
     <header class="main-header">
+        <div class="image-section">
+            <img src="IMAGES/16_20241110_095037_٠٠١٥.jpg" alt="صورة">
+        </div>
         <div class="overlay">
-
             <h1>Welcome</h1>
             <h2>أهلا بكم في منصة د/أحمد الشريف</h2>
             <h2>Ahmed EL-shreif</h2>
             <p>منصة الأحياء والعلوم المتكامله والجيولوجيا </p>
         </div>
     </header>
+
+
     <div class="container">
         <!-- الصف الدراسي الأول -->
-        <div class="class-box" onclick="openContent('content1')">
+       
+            
+
+            <div class="class-box" onclick="openContent('content1')">
             <div class="container1">
                 <img src="IMAGES/WhatsApp Image 2024-07-15 at 10.53.53 PM.jpeg"
                     alt="الصف الأول الثانوي">
@@ -62,6 +128,8 @@
         </div>
     </div>
 
+    
+
     <!-- المحتوى الخاص بكل صف -->
     <div id="content1" class="term" style="display: none;">
         <!-- محتوى الفصل الدراسي الأول -->
@@ -70,7 +138,7 @@
            
             <div class="col-md-6 month">
                 
-                <h3>شهر 8</h3>
+                <h3>كورس الشهر الأول </h3>
                 <img src="c:\Users\LOQ\Pictures\Saved Pictures\WhatsApp Image 2024-07-15 at 10.53.53 PM.jpeg"
                     alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
@@ -92,7 +160,7 @@
             </div>
            
             <div class="col-md-6 month">
-                <h3>شهر 9</h3>
+                <h3>كورس الشهر الثاني </h3>
                 <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
                 <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
@@ -112,7 +180,7 @@
 
             </div>
             <div class="col-md-6 month">
-                <h3>شهر 10</h3>
+                <h3>كورس الشهر الثالث </h3>
                 <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
                 <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
@@ -132,7 +200,7 @@
 
             </div>
             <div class="col-md-6 month">
-                <h3>شهر 11</h3>
+                <h3>كورس الشهر الرابع</h3>
                 <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
                 <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
@@ -152,7 +220,7 @@
 
             </div>
             <div class="col-md-6 month">
-                <h3>شهر 12</h3>
+                <h3>كورس الشهر الخامس </h3>
                 <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
                 <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
@@ -172,7 +240,7 @@
 
             </div>
             <div class="col-md-6 month">
-                <h3>شهر 1</h3>
+                <h3>كورس المراجعه</h3>
                 <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
                 <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
@@ -206,28 +274,34 @@
         <div class="row">
             <!-- الأشهر -->
             <div class="col-md-6 month">
-                <h3>شهر 8</h3>
-                <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
+                <h1>كورس الشهر الأول</h1>
+                <img src="IMAGES/تقدر تحضر تم فتح مجموعات جديده عانا.png" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
-                <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
-                <p><a href="https://example.com" target="_blank">رابط إلى الكويزالأول</a></p>
+                <p><h5>الاسبوع الأول : التغذية الغير ذاتيه 1</h5></p>
+                <p><a href="https://youtu.be/iUqQXkBRYAw" target="_blank">رابط المحاضره الأولي</a></p>
+                
+
                 <hr>
                 <div class="week">الأسبوع الثاني</div>
-                <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
-                <p><a href="https://example.com" target="_blank">رابط إلى الكويزالأول</a></p>
+                <p><h5>الاسبوع الثاني : التغذية الغير ذاتيه 2</h5></p>
+                <p><a href="https://youtu.be/I7Vxbp-h3rg" target="_blank">رابط المحاضره الثانيه</a></p>
+                
+
                 <hr>
                 <div class="week">الأسبوع الثالث</div>
-                <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
-                <p><a href="https://example.com" target="_blank">رابط إلى الكويزالأول</a></p>
+                <p><h5>الاسبوع الثالث : التغذية الغير ذاتيه 3 </h5></p>
+                <p><a href="https://youtu.be/iMfnSFgwDmg" target="_blank">رابط المحاضرة الثالثه</a></p>
+                
                 <hr>
                 <div class="week">الأسبوع الرابع</div>
-                <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
-                <p><a href="https://example.com" target="_blank">رابط إلى الكويزالأول</a></p>
+                <p><h5>الاسبوع الرابع : التغذية الغير ذاتيه  4</h5></p>
+                <p><a href="https://example.com" target="_blank">رابط المحاضره الرابعه</a></p>
+                
 
             </div>
             <div class="col-md-6 month">
                 <h3>شهر 9</h3>
-                <img src="image1.jpg" alt="صورة الأسبوع الأول" class="img-fluid">
+                <img src="IMAGES/3.png" alt="صورة الأسبوع الأول" class="img-fluid">
                 <div class="week">الأسبوع الأول</div>
                 <p><a href="https://example.com" target="_blank">رابط إلى درس الأسبوع الأول</a></p>
                 <p><a href="https://example.com" target="_blank">رابط إلى الكويزالأول</a></p>
@@ -543,7 +617,7 @@
 
         <div class="amira-footer-bottom">
             <h1><b>💓 " وأن ليس للانسان الا ماسعي " 💓</b></h1>
-            <h1><b>💖 استمتع برحلة الوصوللهدفك 💖</b></h1>
+            <h1><b>💖 استمتع برحلة الوصول لهدفك 💖</b></h1>
             <hr>
             <p>Developed By <strong>Amira Abdul-azim</strong> • All Copy Rights Reserved ©2024</p>
         </div>
@@ -557,4 +631,7 @@
             // عرض القسم المختار
             document.getElementById(contentId).style.display = 'block';
         }
+      
     </script>
+    </body>
+</html>
