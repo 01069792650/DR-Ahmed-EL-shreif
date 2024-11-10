@@ -27,4 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # ضع مسار ملفات الموقع النهائي
+          publish_dir: ./puplic  # ضع مسار ملفات الموقع النهائي
