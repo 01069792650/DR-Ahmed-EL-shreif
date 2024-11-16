@@ -1,248 +1,315 @@
 /* إعدادات عامة */
 * {
     box-sizing: border-box;
+    /* يجعل كل العناصر تتبع نموذج الصندوق بمعاملتها بحدود وحشوات ضمن الحجم */
 }
 
 body {
     font-family: Arial, sans-serif;
+    /* نوع الخط العام للموقع */
     direction: rtl;
+    /* اتجاه النص من اليمين لليسار */
     margin: 0;
     padding: 0;
-    background-color: #c67ccb;
+    background-color: #ffffff;
+    /* لون الخلفية الأساسي للموقع */
+}
+
+.overlay{
+    text-align: center;
+}
+
+/* إخفاء الهلال في الوضع الفاتح */
+.moon-icon {
+    display: none;
+}
+
+/* إخفاء الشمس في الوضع الداكن */
+.sun-icon {
+    display: block;
+}
+
+/* عند تفعيل الوضع الداكن */
+input[type="checkbox"]:checked~.theme_toggle-wrap .theme_icon .sun-icon {
+    display: none;
+}
+
+input[type="checkbox"]:checked~.theme_toggle-wrap .theme_icon .moon-icon {
+    display: block;
+}
+
+/* تصميم الشمس والهلال */
+.sun-icon {
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(159, 36, 8, 0.6);
+}
+
+.moon-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #444;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* إعدادات الثيم (تبديل الوضع الليلي والنهاري) */
+.theme {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.theme_toggle-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme_toggle {
+    display: none;
+}
+
+.theme_fill {
+    width: 80px;
+    height: 40px;
+    background-color: #fcffff;
+    border-radius: 50px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.theme_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 239, 66);
+    border-radius: 50%;
+    transition: left 0.3s;
+}
+
+.theme_toggle:checked~.theme_fill {
+    background-color: #333;
+}
+
+.theme_toggle:checked~.theme_icon {
+    background-color: #444;
+    left: 25px;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* إعدادات الهيدر */
+#customHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #d3d5d5;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    height: 80px;
+    text-align: center;
+}
+
+.scroll-active {
+    animation: slideEffect 1.5s ease-in-out infinite;
+}
+
+@keyframes slideEffect {
+    0% {
+        width: 0;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+   
+}
+
+
+.header-content h2 {
+    font-size: 3rem; /* حجم الخط */
+    color: #460202; /* لون النص */
+    font-family: "Arial", sans-serif; /* تغيير نوع الخط */
+    font-weight: bold; /* جعل الخط طخين */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* إضافة ظل للنص */
+    
+    transition: transform 0.3s ease; /* تأثير انتقال لتكبير النص عند المرور */
+    animation: pulse 1s infinite; /* تطبيق تأثير النبض */
+   
+}
+
+/* تأثير النبض */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* الحجم الأصلي */
+    }
+    50% {
+        transform: scale(1.1); /* تكبير النص بنسبة 10% */
+    }
+    100% {
+        transform: scale(1); /* العودة للحجم الأصلي */
+    }
 }
 
 
 
-
-
-/* استايل الهيدر */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* تكبير النص عند مرور الماوس */
+.header-content h2:hover {
+    transform: scale(1.1); /* تكبير النص بنسبة 10% عند المرور */
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 10px; /* حجم شعار الموقع */
-    margin-right: 10px;
-}
-
-.logo h1 {
-    color: #ff5722;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.user-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-button {
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-button i {
-    margin-left: 8px; /* مسافة صغيرة بين النص والأيقونة */
-}
-
-/* استايل زر التسجيل */
-.register-btn {
-    background-color: #ffdddd;
-    color: #d32f2f;
-}
-
-.register-btn:hover {
-    background-color: #ffb3b3;
-}
-
-/* استايل زر الدخول */
-.login-btn {
-    background-color: #e0f7fa;
-    color: #00796b;
-}
-
-.login-btn:hover {
-    background-color: #b2ebf2;
+    width: 150px; /* تكبير العرض */
+    max-width: 600px; /* الحد الأقصى لحجم العرض */
+    height: auto;
+    
 }
 
 
 
 
-.container4 {
-    background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    text-align: center;
+
+
+
+
+#scrollLine {
+    width: 0;
+    height: 5px;
+    background-color: #491ed9;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    transition: width 0.4s ease-in-out;
 }
 
-h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.input-field {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-field label {
-    display: block;
-    font-size: 14px;
-    color: #333;
-}
-
-.input-field input {
+.scroll-active {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
 }
 
-.forget {
+.navigation ul {
+    list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: start;
-    font-size: 14px;
-    color: #666;
+    gap: 20px;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #5a67d8;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #4c51bf;
-}
-
-.create-account {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.create-account a {
-    color: #5a67d8;
+.navigation a {
+    color: white;
     text-decoration: none;
+    font-size: 16px;
 }
 
-.create-account a:hover {
-    text-decoration: underline;
+/* إعدادات التكيف للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navigation ul {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 100px;
+    }
 }
 
-
-/* إعدادات لعنصر الشهر والأسبوع */
-.month {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 15px;
-    background-color: #fbf4fb;
-    border-radius: 8px;
-    
+@media (max-width: 576px) {
+    .header-content {
+        flex-direction: column;
+       
+        gap: 10px;
+    }
+.header-content h2{
+    font-size: 2rem;
+}
+    .navigation ul {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
 
-.week {
-    margin-left: 20px;
-    padding: 5px;
-    border-left: 2px solid #007bff;
-    font-weight: bold;
-    color: #f8fafd;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* إعدادات قسم الفصل */
-.term {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    text-align: center;
-    max-width: 100%;
-    margin: 20px auto;
+.main-header {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    
-    
-    }
-   
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    color: white;
+    text-align: left;
+    flex-direction: row-reverse;
+}
 
+.image-section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background-image: url('IMAGES/11 (1).png');
+    background-size: cover;
+    background-position: center bottom;
+    padding: 0px;
+}
 
-
-
+@media (max-width: 768px) {
     .main-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px; /* المسافة بين الصورة والنص */
-        padding: 20px;
-        height: 100vh;
-        color: white;
-        text-align: left; /* لتكون الكتابة جهة اليمين */
-        flex-direction: row-reverse; /* ترتيب النص يمين والصورة يسار */
+        flex-direction: column;
+        text-align: center;
     }
-    
+
     .image-section img {
-        width: 100%;
-        max-width: 500px; /* عرض أقصى للصورة */
-        height: auto;
-        
+        margin-top: 200px;
     }
-    
-    /* تطبيق التصميم العمودي في الشاشات الصغيرة */
-    @media (max-width: 768px) {
-        .main-header {
-            flex-direction: column; /* ترتيب العناصر بشكل عمودي */
-            text-align: center; /* توسيط النص */
-        }
-    }
-    
-    .main-header h1 {
-        font-size: 10em;
-        margin-bottom: 15px;
-        font-weight: bold;
-        color: #ab10ff;
-    }
-    
-    .main-header h2 {
-        font-size: 3em;
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
-    
-    .main-header p {
-        font-size: 1.5em;
-    }
-    
+}
 
+.main-header h1 {
+    font-size: 10em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ab10ff;
+}
 
+.main-header h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #a02845;
+}
 
-/* إعدادات لعنصر الحاوية */
+.main-header p {
+    font-size: 1.5em;
+    color: #a02845;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -250,22 +317,18 @@ button:hover {
     width: 100%;
     justify-content: center;
     margin-top: 100px;
-   
 }
 
 .class-box {
     position: relative;
     width: 100%;
-    max-width: 350px; /* عرض أصغر للصناديق في الهواتف */
-    height: auto;
+    max-width: 350px;
+    height: 350px;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    
-    height: 350px;
-   
 }
 
 .class-box:hover {
@@ -278,24 +341,53 @@ button:hover {
     display: block;
 }
 
+.month {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 15px;
+    background-color: #fbf4fb;
+    border-radius: 8px;
+}
 
+.week {
+    margin-left: 20px;
+    padding: 5px;
+    border-left: 2px solid #007bff;
+    font-weight: bold;
+    color: #f8fafd;
+    margin-top: 10px;
+    text-align: center;
+}
 
 .month hr {
-    background-color: #261460; /* لون الخط */
-    border: none; /* إزالة الحدود الافتراضية */
-    height: 2px; /* سمك الخط */
-    margin: 20px 0; /* مساحة حول الخط */
+    background-color: #261460;
+    border: none;
+    height: 2px;
+    margin: 20px 0;
 }
+
+.term {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 100%;
+    margin: 20px auto;
+    justify-content: center;
+}
+
 .row {
     display: flex;
     width: 100%;
-    height: auto; /* تقليص الارتفاع */
-    gap: 50px; /* المسافة بين المربعات */
-    justify-content: center; /* محاذاة المربعات في الوسط */
-   
+    height: auto;
+    gap: 50px;
+    justify-content: center;
 }
 
-/* إعدادات الفوتر */
 footer {
     background-color: #063760;
     color: white;
@@ -314,104 +406,32 @@ footer {
     justify-content: center;
 }
 
-.amira-footer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
 .amira-footer-section h2 {
     margin-bottom: 10px;
 }
 
-.amira-footer-section p {
-    font-size: 50px;
-    margin-bottom: 10px;
-     font-family: 'Cairo', sans-serif;
-    
-}
-.amira-footer-bottom p{
-    font-size: 25px;
-    margin-bottom: 10px;
-     font-family: 'Cairo', sans-serif;
-    
-    
-}
 .amira-footer-bottom hr {
-    background-color: #b6eff4; /* لون الخط */
-    border: none; /* إزالة الحدود الافتراضية */
-    height: .5px; /* سمك الخط */
-    margin: 10px 0; /* مساحة حول الخط */
-    margin-top: 20px;
+    background-color: #b6eff4;
+    border: none;
+    height: .5px;
+    margin: 10px 0;
 }
-.amira-footer-bottom strong{
-  color: #d709e6;
-    border: none; /* إزالة الحدود الافتراضية */
-    height: 2px; /* سمك الخط */
-   
+
+.amira-footer-bottom strong {
+    color: #d709e6;
 }
-.amira-footer-bottom h1{
+
+.amira-footer-bottom h1 {
     color: rgb(255, 253, 251);
-      border: none; /* إزالة الحدود الافتراضية */
-      height: 40px; /* سمك الخط */
-     
-  }
-
-
-.amira-footer-section ul {
-    list-style: none;
-    padding: 0;
 }
 
-.amira-footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.amira-footer-section ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.amira-footer-section .amira-socials {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.amira-social {
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-}
-
-.amira-social:hover {
-    background-color: #f0f0f0;
-    color: #396AFF;
-}
-
-footer strong {
-    font-weight: bold;
-}
-
-/* تصميم للشاشات الصغيرة */
 @media (max-width: 768px) {
-    /* الحاوية تتحول إلى عمود */
     .container {
         flex-direction: column;
         gap: 80px;
         margin-top: 70px;
-       
     }
 
-    /* تكبير النصوص في القسم الرئيسي ليكون أكثر وضوحًا */
     .main-header h1 {
         font-size: 2.5em;
     }
@@ -420,83 +440,158 @@ footer strong {
         font-size: 1.8em;
     }
 
-    /* تخصيص عرض الصندوق بشكل مناسب للهواتف */
-    .class-box {
-        width: 100%;
-        max-width: 100%; /* عرض الصندوق بكامل الشاشة */
-        height: auto;
-        justify-content: center;
-        
-       
-    }
-   
+}
 
-    .term {
-        width: 100%;
-        max-width: 100%; /* عرض العنصر بكامل الشاشة */
-        padding: 10px;
-       
-    }
 
-    .amira-footer-content {
-        flex-direction: column;
-        padding: 10px;
-    }
 
-    .amira-footer-section p,
-    .footer-content p {
-        font-size: 50px;
-        font-family: 'Cairo', sans-serif;
+@media (max-width:1080px) {
+    .header-content{
+        order: 1;
     }
-    .amira-footer-bottom h1{
-        font-size: 18px;
-        font-family: 'Comic Sans', sans-serif;
-        width: 100%;
     
+}
+
+
+/* إعدادات الهيدر للشاشات الكبيرة */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 800px; /* مسافة بين header1 و header2 */
+}
+
+/* تنسيق header2 */
+.header2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   margin-right: 100px;
+}
+
+
+/* توسيط محتوى الهيدر */
+#customHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* إعدادات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .header-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* تقسيم إلى عمودين */
+        gap: 15px; /* تقليل المسافة بين header1 و header2 */
+        align-items: center;
     }
-    .amira-footer-bottom p{
-        font-size: 10px;
+
+    .header1, .header2 {
+        text-align: center;
+        font-size: 0.9em; /* تصغير الحجم ليكون مناسباً */
     }
-    .amira-footer-bottom strong{
-        font-size: 15px;
+
+    .header2 {
+        flex-direction: column;
+        gap: 5px; /* تقليل المسافة بين عناصر header2 */
+    }
+
+    .logo {
+        width: 80px; /* تصغير حجم الشعار */
+    }
+
+    .header-content h2 {
+        font-size: 1.5rem; /* تصغير حجم النص داخل header1 */
     }
 }
 
 
 
-/* تصميم للشاشات الأكبر */
-@media (min-width: 768px) {
-    .container {
+
+
+
+
+
+
+
+
+
+
+
+
+/* إخفاء المحتوى المخفي في البداية */
+.hidden-content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* تصميم زر السهم */
+.toggle-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* تغيير لون السهم عند التمرير */
+.toggle-button:hover {
+    color: #555;
+}
+
+
+
+
+
+/* تعيين flexbox لعناصر navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* بالنسبة للـ logo */
+.navbar-brand {
+    flex-shrink: 0;
+}
+
+/* بالنسبة لزر القائمة */
+.navbar-collapse-button {
+    display: block;
+}
+
+/* بالنسبة لزر الوضع الداكن */
+.hidden-md {
+    display: none;
+}
+
+/* عند الشاشات الصغيرة (أقل من 768px) */
+@media (max-width: 767px) {
+    .navbar {
+        flex-direction: row; /* العناصر بجانب بعضها */
+        justify-content: space-between;
+    }
+
+    /* إظهار الأزرار بشكل أفقي في الشاشات الصغيرة */
+    .navbar-brand-container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
+        justify-content: space-between;
         width: 100%;
-      
-        
+        align-items: center;
     }
 
-    .class-box {
-        width: 48%; /* توزيع الصناديق بشكل متساوي */
-
-       
+    .hidden-md {
+        display: block; /* إظهار زر التبديل بين الوضع الداكن */
     }
 
-    .term {
-        width: 100%; /* توزيع العناصر بشكل متساوي */
-      
+    /* إخفاء بعض العناصر في الشاشات الصغيرة */
+    .hidden {
+        display: none;
     }
-    .month{
-        width: 100%;
 }
-  
-  
-}
-
-
-
-
-
 
 
 
